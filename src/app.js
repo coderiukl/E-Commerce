@@ -1,0 +1,25 @@
+const compression = require('compression')
+const express = require('express')
+const morgan = require('morgan')
+const helmet = require('helmet')
+const app = express()
+
+// init middlewares
+app.use(morgan('dev'))
+app.use(helmet())
+app.use(compression())
+
+// init dbs
+
+
+// init routes
+app.get('/', (res, req, next) => {
+    return req.status(200).json({
+        message: 'Hello World'
+    })
+})
+
+// handling errors
+
+
+module.exports = app
